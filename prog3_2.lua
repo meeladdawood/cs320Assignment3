@@ -50,5 +50,7 @@ res =InfixToPostfix(s)
 for i = 1, #res do
     local temp = res:sub(i,i)
     io.write(temp)
-    io.write(" ")
+    if i ~= #res then
+    	io.write(" ")
+    end
 end
