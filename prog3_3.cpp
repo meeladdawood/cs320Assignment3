@@ -17,8 +17,8 @@ int main(int argc, char* argv[]){
 	lua_State *L = luaL_newstate();
 	luaL_openlibs(L);
 	luaL_dofile(L, filename.c_str());
-	char[] expression = *luaL_checkstring(L,1);
-	prinf("%s",expression);
+	string expression = *luaL_checkstring(L,1);
+	cout << expression << endl;
 
 }
 
