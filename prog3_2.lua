@@ -17,7 +17,6 @@ postfixStr = ""
 
      for i = 1, #operands
        do
-          --print(operands[i]) 
           i = i + 1
       end
    
@@ -31,14 +30,14 @@ postfixStr = ""
               (prec[tostring(operators[#operators])] >= prec[tostring((operands[i]))])  )
                     do
                       postfixStr = postfixStr .. operators[#operators]
-                        table.remove(operators)
+                      table.remove(operators)
                     end
            table.insert(operators,(operands[i]))
          end
     end
               while (next(operators) ~= nil)   
                 do
-                   postfixStr = postfixStr .. operators[#operators]
+                  postfixStr = postfixStr .. operators[#operators]
                   table.remove(operators)
                   end
   return postfixStr
@@ -46,6 +45,10 @@ end
 
 
 s = io.read("*l")
---print(s)
+io.write(" ")
 res =InfixToPostfix(s)
-
+for i = 1, #res do
+    local temp = res:sub(i,i)
+    io.write(temp)
+    io.write(" ")
+end
