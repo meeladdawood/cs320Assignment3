@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+extern "C"{
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
+}
+
+int main(int argc, char* argv[]){
+	string filename = argv[1];
+	lua_State *L = luaL_newstate();
+	luaL_openlibs(L);
+	luaL_dofile(L, filename.c_str());
+}
