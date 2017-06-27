@@ -1,8 +1,51 @@
-function infixToPostfix(str)
-	print(str)
+function InfixToPostfix(str)
+ 
+prec = {} 
+operators = {}
+operands = {} 
+prec["+"] = 1
+prec["-"] = 1
+prec["*"] = 2
+prec["/"] = 2
+index = 1
+postfixStr = ""
+    for token in string.gmatch(str,"%S+")
+      do 
+        operands[index] = token
+        index = index +1
+      end
 
+     for i = 1, #operands
+       do
+          --print(operands[i]) 
+          i = i + 1
+      end
+   
+    for i = 1, #operands
+        do
+          if tonumber(operands[i]) ~= nil 
+               then
+                   postfixStr = postfixStr .. operands[i] 
+           else
+              while(( next(operators) ~= nil) and
+              (prec[tostring(operators[#operators])] >= prec[tostring((operands[i]))])  )
+                    do
+                      postfixStr = postfixStr .. operators[#operators]
+                        table.remove(operators)
+                    end
+           table.insert(operators,(operands[i]))
+         end
+    end
+              while (next(operators) ~= nil)   
+                do
+                   postfixStr = postfixStr .. operators[#operators]
+                  table.remove(operators)
+                  end
+  return postfixStr
 end
 
-stack = {}
+
 s = io.read("*l")
-infixToPostfix(s)
+print(s)
+res =InfixToPostfix(s)
+
