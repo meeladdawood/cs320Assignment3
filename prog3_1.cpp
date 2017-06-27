@@ -12,6 +12,7 @@ extern "C"{
 }
 
 int main(int argc, char* argv[]){
+	printf("Assignment #3-1, Meelad Dawood, mdawood2@sdsu.edu\n");
 	string filename = argv[1];
 	lua_State *L = luaL_newstate();
 	luaL_openlibs(L);
