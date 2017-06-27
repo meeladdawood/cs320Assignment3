@@ -46,6 +46,6 @@ end
 
 
 s = io.read("*l")
-print(s)
+--print(s)
 res =InfixToPostfix(s)
 
