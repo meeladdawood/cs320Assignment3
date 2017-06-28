@@ -18,9 +18,7 @@ int main(int argc, char* argv[]){
 	luaL_openlibs(L);
 	luaL_dofile(L, filename.c_str());
 	lua_getglobal(L, "res");
-	//char expression = *luaL_checkstring(L,-1);
         const char* expression = lua_tostring(L,-1);
-	//cout <<  expression << endl;
 
 }
 
