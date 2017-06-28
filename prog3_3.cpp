@@ -20,7 +20,7 @@ int main(int argc, char* argv[]){
 	lua_getglobal(L, "res");
 	//char expression = *luaL_checkstring(L,-1);
         const char* expression = lua_tostring(L,-1);
-	cout <<  expression << endl;
+	//cout <<  expression << endl;
 
 }
 
