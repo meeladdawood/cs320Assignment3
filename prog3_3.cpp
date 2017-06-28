@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
 	luaL_dofile(L, filename.c_str());
 	//char expression = *luaL_checkstring(L,-1);
         const char* expression = lua_tostring(L,-1);
-	cout << expression << endl;
+	cout << (void *) expression << endl;
 
 }
 
